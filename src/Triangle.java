@@ -1,5 +1,5 @@
 public class Triangle {
-    double first,second,third;
+    private double first,second,third;
     Triangle (double first,double second,double third){
         this.first = first;
         this.second = second;

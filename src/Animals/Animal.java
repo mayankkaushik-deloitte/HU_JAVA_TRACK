@@ -1,7 +1,7 @@
 package Animals;
 
 public class Animal {
-    String animalType, sound, size;
+    private String animalType, sound, size;
     public void setters(String animalType,String sound, String size){
         this.animalType = animalType;
         this.sound = sound;

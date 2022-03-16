@@ -1,5 +1,5 @@
 public class Square {
-    double side;
+    private double side;
     Square(double side){
         this.side = side;
     }

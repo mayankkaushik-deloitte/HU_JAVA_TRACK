@@ -1,5 +1,5 @@
 public class Rectangle {
-    double length, breadth;
+    private double length, breadth;
     Rectangle(double length,double breadth){
         this.length = length;
         this.breadth = breadth;
