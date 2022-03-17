@@ -16,10 +16,13 @@ public class Main {
     }
     public static boolean predicate(String s1, String s2, String s3){
         int j = 0;
+        int n = s3.length();
+        int []visited = new int[n];
         for(int i = 0 ; i < s1.length() ; i++){
             boolean flag = false;
             while(j < s3.length()){
-                if(s1.charAt(i) == s3.charAt(j)){
+                if(visited[j] == 0 && s1.charAt(i) == s3.charAt(j)){
+                    visited[j] = 1;
                     j++;
                     flag = true;
                     break;
@@ -34,8 +37,9 @@ public class Main {
         for(int i = 0 ; i < s2.length() ; i++){
             boolean flag = false;
             while(j < s3.length()){
-                if(s2.charAt(i) == s3.charAt(j)){
+                if(visited[j] == 0 && s2.charAt(i) == s3.charAt(j)){
                     flag = true;
+                    visited[j] = 1;
                     j++;
                     break;
                 }
