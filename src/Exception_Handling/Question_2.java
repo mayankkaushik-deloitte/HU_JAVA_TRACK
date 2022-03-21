@@ -10,7 +10,7 @@ public class Question_2 {
         try {
             boolean ok_upper_case = false,ok_lower_case = false, ok_digit = false,ok_special = false;
             int len = password.length();
-            if(len < 5 || len > 10)throw new Exception();
+            if(len < 5 || len > 10)throw new Exception("Length is not in bounds");
             for(int i = 0 ; i < password.length() ; i++) {
                 char ch = password.charAt(i);
                 if (Character.isUpperCase(ch)) {
@@ -27,11 +27,12 @@ public class Question_2 {
                 }
             }
             if (!(ok_special && ok_digit && ok_lower_case && ok_upper_case)) {
-                throw new Exception();
+                throw new Exception("Characters don't meet requirement!");
             }
             System.out.println("Password is good!");
         }
         catch (Exception e){
+            System.out.println(e.getMessage());
             System.out.println("Bad Password, Errrr!");
             System.out.println("Password must have a length between 5 and 10 inclusive. \nPassword must have at least one lowercase, one uppercase, one digit, one special character : @ # & ! * %");
         }
