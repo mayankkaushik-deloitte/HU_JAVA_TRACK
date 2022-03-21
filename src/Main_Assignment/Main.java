@@ -1,11 +1,13 @@
 package Main_Assignment;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     static HashMap<String,String> loginDetails;
+    ArrayList<User> userDetails = new ArrayList<User>();
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("For Login press 1.\nFor Registration press 2.");
@@ -37,6 +39,7 @@ public class Main {
                 System.out.println("Registration Unsuccessful.");
             }
         }
+        actualFunction();
     }
     static void login(){
         Scanner sc = new Scanner(System.in);
@@ -60,5 +63,29 @@ public class Main {
         if(loginDetails.containsKey(userName))throw new InputMismatchException("Already Registered.");
         loginDetails.put(userName, password);
     }
-
+    static void actualFunction(){
+        Scanner sc = new Scanner(System.in);
+        while(sc.hasNextInt()){
+            showOptions();
+            int option = sc.nextInt();
+            if(option == 1){
+                addData();
+            }else if(option == 2){
+                listData();
+            }else if(option == 3){
+                updateData();
+            }else if(option == 4){
+                deleteData();
+            }else{
+                System.out.println("Program ends here.");
+                return;
+            }
+        }
+    }
+    static void addData(){
+        
+    }
+    static void showOptions(){
+        System.out.println("1. Add user data\n2. List user data\n3. Update user data\n4. Delete user data\n5. Exit");
+    }
 }
