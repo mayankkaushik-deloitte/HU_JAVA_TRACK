@@ -13,4 +13,7 @@ public class User {
         this.age = age;
         this.salary = salary;
     }
+    public String getName(){
+        return this.name;
+    }
 }

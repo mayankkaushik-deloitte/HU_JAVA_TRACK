@@ -6,14 +6,14 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    static HashMap<String,String> loginDetails;
+    static HashMap<String,String> loginDetails = new HashMap<>();
     static ArrayList<User> userDetails = new ArrayList<User>();
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("For Login press 1.\nFor Registration press 2.");
         int input = sc.nextInt();
         try{
-            if(input != 1 || input != 2) {
+            if(input != 1 && input != 2) {
                 throw new Exception("Input invalid");
             }
         }
@@ -36,7 +36,7 @@ public class Main {
                 actualFunction();
             }
             catch (Exception e){
-                System.out.println("Registration Unsuccessful.");
+                System.out.println(e.getMessage());
             }
         }
     }
@@ -58,13 +58,14 @@ public class Main {
         String password = sc.nextLine();
         System.out.println("Re-Enter Password : ");
         String password2 = sc.nextLine();
-        if(password != password2)throw new InputMismatchException("Passwords don't match");
-        if(loginDetails.containsKey(userName))throw new InputMismatchException("Already Registered.");
+        if(!password.equals(password2))throw new InputMismatchException("Passwords don't match");
+        if(!loginDetails.isEmpty() && loginDetails != null && loginDetails.containsKey(userName))throw new InputMismatchException("Already Registered.");
         loginDetails.put(userName, password);
     }
     static void actualFunction(){
+        System.out.println("Welcome to the User DB--");
         Scanner sc = new Scanner(System.in);
-        while(sc.hasNextInt()){
+        while(true){
             showOptions();
             int option = sc.nextInt();
             if(option == 1){
@@ -82,10 +83,12 @@ public class Main {
         }
     }
     static void addData(){
-        userDetails.add(new User("));
+        userDetails.add(new User("abc123", "mayank", "hashedin", "SDET", "gzb", "998",21,50000));
     }
     static void listData(){
-
+        for(User e : userDetails){
+            System.out.println(e.getName() + ",");
+        }
     }
     static void deleteData(){
 
