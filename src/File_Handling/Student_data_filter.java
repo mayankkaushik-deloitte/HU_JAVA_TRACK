@@ -1,6 +1,7 @@
 package File_Handling;
 
 import java.io.*;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -36,5 +37,18 @@ public class Student_data_filter {
         catch (IOException e){
             System.out.println(e.getMessage());
         }
+        PrintWriter pw = null;
+        String filename = "C:\\Users\\mayakaushik\\Java Track\\src\\ResultData.csv";
+        try{
+            pw = new PrintWriter(filename);
+        }
+        catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+        for(int i = 0 ; i < 5 ; i++){
+            pw.println(arr.get(i).toString());
+        }
+        pw.flush();
+        pw.close();
     }
 }

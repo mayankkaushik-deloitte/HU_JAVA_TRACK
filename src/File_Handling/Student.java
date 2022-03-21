@@ -27,6 +27,6 @@ public class Student {
     }
     @Override
     public String toString(){
-        return this.name + " " + this.reg_no_10 + " " + this.reg_no_12 + " " + this.reg_no_btech + " " + this.Rank;
+        return this.name + "," + this.reg_no_10 + "," + this.reg_no_12 + "," + this.reg_no_btech + "," + this.Rank;
     }
 }
