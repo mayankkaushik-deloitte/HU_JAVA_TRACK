@@ -1,6 +1,7 @@
 package Main_Assignment;
 
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -33,27 +34,27 @@ public class Main {
             }
         }
     }
-    public static void login(){
+    static void login(){
         Scanner sc = new Scanner(System.in);
         System.out.println("---Welcome to Login Page---");
         System.out.println("Enter Username : ");
         String userName = sc.nextLine();
         System.out.println("Enter password : ");
         String password = sc.nextLine();
-        if(loginDetails.containsKey(userName)){
-            try{
-                if(loginDetails.get(userName) != password){
-                    throw new Exception("Incorrect Login Details.");
-                }
-            }catch (Exception e){
-                System.out.println(e.getMessage());
-            }
-        }else {
-            throw new Exception("Incorrect Login Details.");
-        }
+        if(!loginDetails.containsKey(userName))throw new InputMismatchException("Invalid details.");
+        if(password != loginDetails.get(userName))throw new InputMismatchException("Invalid details");
     }
-    public static void registration(){
-
+    static void registration(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Username : ");
+        String userName = sc.nextLine();
+        System.out.println("Enter Password : ");
+        String password = sc.nextLine();
+        System.out.println("Re-Enter Password : ");
+        String password2 = sc.nextLine();
+        if(password != password2)throw new InputMismatchException("Passwords don't match");
+        if(loginDetails.containsKey(userName))throw new InputMismatchException("Already Registered.");
+        loginDetails.put(userName, password);
     }
 
 }
