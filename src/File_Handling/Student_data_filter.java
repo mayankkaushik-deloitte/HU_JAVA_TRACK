@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Student_data_filter {
     public static void main(String []args){
-        String path = "C:\\Users\\mayakaushik\\Java Track\\src\\StudentsData.csv";
+        String path = "C:\\Users\\mayakaushik\\Java Track\\src\\File_Handling\\StudentsData.csv";
         String line = "";
 //        int i = 0;
         ArrayList<Student> arr = new ArrayList<Student>();
@@ -38,7 +38,7 @@ public class Student_data_filter {
             System.out.println(e.getMessage());
         }
         PrintWriter pw = null;
-        String filename = "C:\\Users\\mayakaushik\\Java Track\\src\\ResultData.csv";
+        String filename = "C:\\Users\\mayakaushik\\Java Track\\src\\File_Handling\\ResultData.csv";
         try{
             pw = new PrintWriter(filename);
         }
