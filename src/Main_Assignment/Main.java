@@ -21,16 +21,20 @@ public class Main {
         if(input == 1){
             try{
                 login();
+                System.out.println("Login successful.");
+
             }
             catch (Exception e){
-                System.out.println(e.getMessage());
+                System.out.println("Login Unsuccessful.");
             }
         }else{
             try{
                 registration();
+                System.out.println("Registration successful.");
+
             }
             catch (Exception e){
-                System.out.println(e.getMessage());
+                System.out.println("Registration Unsuccessful.");
             }
         }
     }
