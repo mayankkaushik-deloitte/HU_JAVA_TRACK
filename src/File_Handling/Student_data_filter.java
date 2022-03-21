@@ -26,7 +26,7 @@ public class Student_data_filter {
                 t++;
             }
             Collections.sort(arr, (a,b) -> a.getRank() - b.getRank());
-            for(int i = 1 ; i <= 5 ; i++){
+            for(int i = 0 ; i < 5 ; i++){
                 System.out.println(arr.get(i));
             }
         }
