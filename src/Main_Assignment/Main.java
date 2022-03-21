@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Main {
     static HashMap<String,String> loginDetails;
-    ArrayList<User> userDetails = new ArrayList<User>();
+    static ArrayList<User> userDetails = new ArrayList<User>();
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("For Login press 1.\nFor Registration press 2.");
@@ -24,7 +24,7 @@ public class Main {
             try{
                 login();
                 System.out.println("Login successful.");
-
+                actualFunction();
             }
             catch (Exception e){
                 System.out.println("Login Unsuccessful.");
@@ -33,13 +33,12 @@ public class Main {
             try{
                 registration();
                 System.out.println("Registration successful.");
-
+                actualFunction();
             }
             catch (Exception e){
                 System.out.println("Registration Unsuccessful.");
             }
         }
-        actualFunction();
     }
     static void login(){
         Scanner sc = new Scanner(System.in);
@@ -83,7 +82,16 @@ public class Main {
         }
     }
     static void addData(){
-        
+        userDetails.add(new User("));
+    }
+    static void listData(){
+
+    }
+    static void deleteData(){
+
+    }
+    static void updateData(){
+
     }
     static void showOptions(){
         System.out.println("1. Add user data\n2. List user data\n3. Update user data\n4. Delete user data\n5. Exit");
