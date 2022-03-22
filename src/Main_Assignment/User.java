@@ -61,4 +61,8 @@ public class User {
     public void setSalary(int salary){
         this.salary = salary;
     }
+    @Override
+    public String toString(){
+        return this.name + "," + this.userID + "," + this.address + "," + this.companyName + "," + this.phoneNumber + "," + this.salary + "," + this.designation;
+    }
 }

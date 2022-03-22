@@ -1,14 +1,47 @@
 package Main_Assignment;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.stream.StreamSupport;
 
+
 public class Main {
     static HashMap<String,String> loginDetails = new HashMap<>();
-    static ArrayList<User> userDetails = new ArrayList<User>();
+    public static ArrayList<User> userDetails = new ArrayList<User>();
+    public static void toCSVData(){
+        PrintWriter pw = null;
+        String fileName = "C:\\Users\\mayakaushik\\Java Track\\src\\Main_Assignment\\models\\data.csv";
+        try{
+            pw = new PrintWriter(fileName);
+        }
+        catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+
+        for(int i = 0 ; i < userDetails.size() ; i++){
+            pw.println((userDetails.get(i).toString()));
+        }
+        pw.flush();pw.close();
+    }
+    public static void toCSVReg(){
+        PrintWriter pw = null;
+        String fileName = "C:\\Users\\mayakaushik\\Java Track\\src\\Main_Assignment\\models\\data.csv";
+        try{
+            pw = new PrintWriter(fileName);
+        }
+        catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+
+        for(<String, Str){
+            pw.println((loginDetails.));
+        }
+        pw.flush();pw.close();
+    }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("For Login press 1.\nFor Registration press 2.");
@@ -33,8 +66,10 @@ public class Main {
         }else{
             try{
                 registration();
+                toCSVReg();
                 System.out.println("Registration successful.");
                 actualFunction();
+                toCSVData();
             }
             catch (Exception e){
                 System.out.println(e.getMessage());
@@ -60,7 +95,7 @@ public class Main {
         System.out.println("Re-Enter Password : ");
         String password2 = sc.nextLine();
         if(!password.equals(password2))throw new InputMismatchException("Passwords don't match");
-        if(!loginDetails.isEmpty() && loginDetails != null && loginDetails.containsKey(userName))throw new InputMismatchException("Already Registered.");
+        if(!loginDetails.isEmpty() && loginDetails.containsKey(userName))throw new InputMismatchException("Already Registered.");
         loginDetails.put(userName, password);
     }
     static void actualFunction(){
