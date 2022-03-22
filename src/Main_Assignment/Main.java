@@ -125,6 +125,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int option = sc.nextInt();
         userDetails.remove(option - 1);
+        listData();
     }
     static void updateData(){
 
