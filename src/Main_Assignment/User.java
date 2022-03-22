@@ -37,4 +37,28 @@ public class User {
     public int getAge(){
         return this.age;
     }
+    public void setName(String name){
+        this.name = name;
+    }
+    public void setUserID(String userID){
+        this.userID = userID;
+    }
+    public void setCompanyName(String companyName){
+        this.companyName = companyName;
+    }
+    public void setDesignation(String designation){
+        this.designation = designation;
+    }
+    public void setAddress(String address){
+        this.address = address;
+    }
+    public void setAge(int age){
+        this.age = age;
+    }
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber = phoneNumber;
+    }
+    public void setSalary(int salary){
+        this.salary = salary;
+    }
 }

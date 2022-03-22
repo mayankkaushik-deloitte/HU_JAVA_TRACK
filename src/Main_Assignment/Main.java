@@ -128,7 +128,24 @@ public class Main {
         listData();
     }
     static void updateData(){
-
+        Scanner sc = new Scanner(System.in);
+        listData();
+        System.out.println("Choose the user whose details you want to update : ");
+        int serial = sc.nextInt();
+        System.out.println("Choose the serial below to update that specific field.");
+        System.out.println("1. Name");
+        System.out.println("2. Designation");
+        System.out.println("3. Address");
+        System.out.println("4. Company Name");
+        System.out.println("5. Salary");
+        System.out.println("6. Phone Number");
+        int option = sc.nextInt();
+        switch (option){
+            case 1:
+                System.out.println("Enter name : ");
+                String newName = sc.nextLine();
+                userDetails.get(serial - 1).setName(newName);
+        }
     }
     static void showOptions(){
         System.out.println("1. Add user data\n2. List user data\n3. Update user data\n4. Delete user data\n5. Exit");
