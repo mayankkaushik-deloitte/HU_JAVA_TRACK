@@ -49,14 +49,8 @@ public class Main {
             BufferedReader br = new BufferedReader(new FileReader(path));
             while((line = br.readLine()) != null) {
                 String[] values = line.split(",");
-                try{
-                    System.out.println(values[0]);
-                }
-                catch (Exception e){
-                    System.out.println(e.getMessage());
-                }
-//                userDetails.add(new User(values[0],values[1], values[2],values[3],values[4],values[5],Integer.parseInt(values[6]),Integer.parseInt(values[7])));
-//                t++;
+                userDetails.add(new User(values[0],values[1], values[2],values[3],values[4],values[5],Integer.parseInt(values[6]),Integer.parseInt(values[7])));
+                t++;
             }
         }
         catch (FileNotFoundException e){
@@ -96,7 +90,7 @@ public class Main {
         catch (Exception e){
             System.out.println(e.getMessage());
         }
-//        retrievePrevDetails();
+        retrievePrevDetails();
         if(input == 1){
             try{
                 login();
@@ -127,7 +121,7 @@ public class Main {
         System.out.println("Enter password : ");
         String password = sc.nextLine();
         if(!loginDetails.containsKey(userName))throw new InputMismatchException("Invalid details.");
-        if(password != loginDetails.get(userName))throw new InputMismatchException("Invalid details");
+        if(!password.equals(loginDetails.get(userName)))throw new InputMismatchException("Invalid details");
     }
     static void registration(){
         Scanner sc = new Scanner(System.in);
