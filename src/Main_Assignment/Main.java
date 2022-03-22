@@ -49,8 +49,14 @@ public class Main {
             BufferedReader br = new BufferedReader(new FileReader(path));
             while((line = br.readLine()) != null) {
                 String[] values = line.split(",");
-                userDetails.add(new User(values[0], values[1], values[2], values[3], values[4], values[5], Integer.parseInt(values[6]), Integer.parseInt(values[7])));
-                t++;
+                try{
+                    System.out.println(values[0]);
+                }
+                catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
+//                userDetails.add(new User(values[0],values[1], values[2],values[3],values[4],values[5],Integer.parseInt(values[6]),Integer.parseInt(values[7])));
+//                t++;
             }
         }
         catch (FileNotFoundException e){
@@ -90,7 +96,7 @@ public class Main {
         catch (Exception e){
             System.out.println(e.getMessage());
         }
-        retrievePrevDetails();
+//        retrievePrevDetails();
         if(input == 1){
             try{
                 login();
