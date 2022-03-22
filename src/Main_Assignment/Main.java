@@ -114,7 +114,17 @@ public class Main {
         System.out.println("--------------------------------------x--------------------------------------");
     }
     static void deleteData(){
-
+        System.out.println("Name :- " + "UserID :- " + "CompanyName :- " + "Designation :- " + "Address :- " + "PhoneNumber :- " + "Age :- " + "Salary :- ");
+        int serial = 1;
+        for(User e : userDetails){
+            System.out.print(serial++ + ". ");
+            System.out.println(e.getName() + " " + e.getUserID() + " " + e.getCompanyName() + " " + e.getDesignation() + " " + e.getAddress() + " " + e.getPhoneNumber() + " " + e.getAge() + " " + e.getSalary());
+        }
+        System.out.println();
+        System.out.println("Enter the serial no. which you want to delete :");
+        Scanner sc = new Scanner(System.in);
+        int option = sc.nextInt();
+        userDetails.remove(option - 1);
     }
     static void updateData(){
 
