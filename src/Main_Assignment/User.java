@@ -16,4 +16,25 @@ public class User {
     public String getName(){
         return this.name;
     }
+    public String getUserID(){
+        return this.userID;
+    }
+    public String getAddress(){
+        return this.address;
+    }
+    public String getCompanyName(){
+        return this.companyName;
+    }
+    public String getDesignation(){
+        return this.designation;
+    }
+    public String getPhoneNumber(){
+        return this.phoneNumber;
+    }
+    public int getSalary(){
+        return this.salary;
+    }
+    public int getAge(){
+        return this.age;
+    }
 }
