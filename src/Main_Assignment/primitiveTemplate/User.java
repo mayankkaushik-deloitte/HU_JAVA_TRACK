@@ -1,4 +1,4 @@
-package Main_Assignment;
+package Main_Assignment.primitiveTemplate;
 
 public class User {
     private String userID, name, companyName, designation, address, phoneNumber;

@@ -1,5 +1,7 @@
 package Main_Assignment;
 
+import Main_Assignment.primitiveTemplate.User;
+
 import java.util.Scanner;
 
 import static Main_Assignment.Main.userDetails;
