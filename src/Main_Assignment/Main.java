@@ -121,12 +121,7 @@ public class Main {
         String userName = sc.nextLine();
         System.out.println("Enter password : ");
         String password = sc.nextLine();
-        try{
-            validatePassword(password);
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-        }
+
         if(!loginDetails.containsKey(userName))throw new InputMismatchException("Invalid details.");
         if(!password.equals(loginDetails.get(userName)))throw new InputMismatchException("Invalid details");
     }
@@ -138,6 +133,12 @@ public class Main {
         String password = sc.nextLine();
         System.out.println("Re-Enter Password : ");
         String password2 = sc.nextLine();
+        try{
+            validatePassword(password);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         if(!password.equals(password2))throw new InputMismatchException("Passwords don't match");
         if(!loginDetails.isEmpty() && loginDetails.containsKey(userName))throw new InputMismatchException("Already Registered.");
         loginDetails.put(userName, password);
