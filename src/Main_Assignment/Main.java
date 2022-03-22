@@ -4,6 +4,7 @@ package Main_Assignment;
 import java.io.*;
 import java.util.*;
 
+import static Main_Assignment.Validate.validatePassword;
 import static Main_Assignment.actualFunction.actualCRUD;
 
 
@@ -120,6 +121,12 @@ public class Main {
         String userName = sc.nextLine();
         System.out.println("Enter password : ");
         String password = sc.nextLine();
+        try{
+            validatePassword(password);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         if(!loginDetails.containsKey(userName))throw new InputMismatchException("Invalid details.");
         if(!password.equals(loginDetails.get(userName)))throw new InputMismatchException("Invalid details");
     }

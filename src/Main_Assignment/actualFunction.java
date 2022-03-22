@@ -3,6 +3,7 @@ package Main_Assignment;
 import java.util.Scanner;
 
 import static Main_Assignment.Main.userDetails;
+import static Main_Assignment.Validate.validateAge;
 
 public class actualFunction {
     static void actualCRUD(){
@@ -41,6 +42,12 @@ public class actualFunction {
         String phoneNumber = sc.nextLine();
         System.out.println("Enter the Age : ");
         int age = sc.nextInt();
+        try{
+            validateAge(age);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         System.out.println("Enter the Salary : ");
         int salary  = sc.nextInt();
 
