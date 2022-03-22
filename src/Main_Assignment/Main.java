@@ -109,9 +109,9 @@ public class Main {
         int serial = 1;
         for(User e : userDetails){
             System.out.print(serial + ". ");
-            System.out.println(e.getName() + " ");
+            System.out.println(e.getName() + " " + e.getUserID() + " " + e.getCompanyName() + " " + e.getDesignation() + " " + e.getAddress() + " " + e.getPhoneNumber() + " " + e.getAge() + " " + e.getSalary());
         }
-
+        System.out.println("--------------------------------------x--------------------------------------");
     }
     static void deleteData(){
 
