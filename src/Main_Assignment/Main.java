@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.stream.StreamSupport;
 
 public class Main {
     static HashMap<String,String> loginDetails = new HashMap<>();
@@ -83,12 +84,34 @@ public class Main {
         }
     }
     static void addData(){
-        userDetails.add(new User("abc123", "mayank", "hashedin", "SDET", "gzb", "998",21,50000));
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the userID : ");
+        String uID = sc.nextLine();
+        System.out.println("Enter the name : ");
+        String name = sc.nextLine();
+        System.out.println("Enter the companyName : ");
+        String companyName = sc.nextLine();
+        System.out.println("Enter the Designation : ");
+        String designation = sc.nextLine();
+        System.out.println("Enter the Address: ");
+        String address = sc.nextLine();
+        System.out.println("Enter the Phone Number  : ");
+        String phoneNumber = sc.nextLine();
+        System.out.println("Enter the Age : ");
+        int age = sc.nextInt();
+        System.out.println("Enter the Salary : ");
+        int salary  = sc.nextInt();
+
+        userDetails.add(new User(uID, name, companyName, designation, address, phoneNumber,age,salary));
     }
     static void listData(){
+        System.out.println("Name :- " + "UserID :- " + "CompanyName :- " + "Designation :- " + "Address :- " + "PhoneNumber :- " + "Age :- " + "Salary :- ");
+        int serial = 1;
         for(User e : userDetails){
-            System.out.println(e.getName() + ",");
+            System.out.print(serial + ". ");
+            System.out.println(e.getName() + " ");
         }
+
     }
     static void deleteData(){
 
