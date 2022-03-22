@@ -108,7 +108,7 @@ public class Main {
         System.out.println("Name :- " + "UserID :- " + "CompanyName :- " + "Designation :- " + "Address :- " + "PhoneNumber :- " + "Age :- " + "Salary :- ");
         int serial = 1;
         for(User e : userDetails){
-            System.out.print(serial + ". ");
+            System.out.print(serial++ + ". ");
             System.out.println(e.getName() + " " + e.getUserID() + " " + e.getCompanyName() + " " + e.getDesignation() + " " + e.getAddress() + " " + e.getPhoneNumber() + " " + e.getAge() + " " + e.getSalary());
         }
         System.out.println("--------------------------------------x--------------------------------------");
@@ -140,12 +140,32 @@ public class Main {
         System.out.println("5. Salary");
         System.out.println("6. Phone Number");
         int option = sc.nextInt();
-        switch (option){
-            case 1:
-                System.out.println("Enter name : ");
-                String newName = sc.nextLine();
-                userDetails.get(serial - 1).setName(newName);
+        if(option == 1) {
+            System.out.println("Enter name : ");
+            String newName = sc.nextLine();
+            userDetails.get(serial - 1).setName(newName);
+        }else if(option == 2) {
+            System.out.println("Enter Designation : ");
+            String designation = sc.nextLine();
+            userDetails.get(serial - 1).setDesignation(designation);
+        }else if(option == 3) {
+            System.out.println("Enter Address : ");
+            String address = sc.nextLine();
+            userDetails.get(serial - 1).setAddress(address);
+        }else if(option == 4) {
+            System.out.println("Enter Company Name : ");
+            String companyName = sc.nextLine();
+            userDetails.get(serial - 1).setAddress(companyName);
+        }else if(option == 5) {
+            System.out.println("Enter salary : ");
+            int salary = sc.nextInt();
+            userDetails.get(serial - 1).setSalary(salary);
+        }else if(option == 6) {
+            System.out.println("Enter Phone Number : ");
+            String phoneNo = sc.nextLine();
+            userDetails.get(serial - 1).setPhoneNumber(phoneNo);
         }
+//        listData();
     }
     static void showOptions(){
         System.out.println("1. Add user data\n2. List user data\n3. Update user data\n4. Delete user data\n5. Exit");
