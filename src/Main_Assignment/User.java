@@ -63,6 +63,6 @@ public class User {
     }
     @Override
     public String toString(){
-        return this.name + "," + this.userID + "," + this.address + "," + this.companyName + "," + this.phoneNumber + "," + this.salary + "," + this.designation;
+        return this.name + "," + this.userID + "," + this.companyName + "," + this.designation + "," + this.address + "," + this.phoneNumber + "," + this.age + "," + this.salary;
     }
 }

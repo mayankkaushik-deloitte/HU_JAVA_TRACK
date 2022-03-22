@@ -1,11 +1,9 @@
 package Main_Assignment;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import File_Handling.Student;
+
+import java.io.*;
+import java.util.*;
 import java.util.stream.StreamSupport;
 
 
@@ -29,7 +27,7 @@ public class Main {
     }
     public static void toCSVReg(){
         PrintWriter pw = null;
-        String fileName = "C:\\Users\\mayakaushik\\Java Track\\src\\Main_Assignment\\models\\data.csv";
+        String fileName = "C:\\Users\\mayakaushik\\Java Track\\src\\Main_Assignment\\models\\regDetails.csv";
         try{
             pw = new PrintWriter(fileName);
         }
@@ -37,10 +35,48 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-        for(<String, Str){
-            pw.println((loginDetails.));
+        for(String key : loginDetails.keySet()){
+            pw.println(key + "," + loginDetails.get(key));
         }
         pw.flush();pw.close();
+    }
+    public static void retrievePrevDetails(){
+        String path = "C:\\Users\\mayakaushik\\Java Track\\src\\Main_Assignment\\models\\data.csv";
+        String line = "";
+//        int i = 0;
+        int t = 1;
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(path));
+            while((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                userDetails.add(new User(values[0], values[1], values[2], values[3], values[4], values[5], Integer.parseInt(values[6]), Integer.parseInt(values[7])));
+                t++;
+            }
+        }
+        catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+        catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+        String path2 = "C:\\Users\\mayakaushik\\Java Track\\src\\Main_Assignment\\models\\regDetails.csv";
+        String line2 = "";
+//        int i = 0;
+        t = 1;
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(path2));
+            while((line2 = br.readLine()) != null) {
+                String[] values = line2.split(",");
+                loginDetails.put(values[0], values[1]);
+                t++;
+            }
+        }
+        catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        }
+        catch (IOException e){
+            System.out.println(e.getMessage());
+        }
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
@@ -54,6 +90,7 @@ public class Main {
         catch (Exception e){
             System.out.println(e.getMessage());
         }
+        retrievePrevDetails();
         if(input == 1){
             try{
                 login();
